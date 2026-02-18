@@ -261,7 +261,7 @@ const Booking = () => {
                                                     </div>
 
                                                     {/* Availability Badge - Moved here */}
-                                                    <div className="mt-4 flex justify-end">
+                                                    <div className="mt-4 flex justify-start">
                                                         <span className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] px-2 py-1 rounded-full uppercase tracking-wider font-bold shadow-sm flex items-center gap-1.5 w-fit">
                                                             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                                                             Lugares Disponibles
