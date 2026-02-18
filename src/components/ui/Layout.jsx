@@ -126,7 +126,7 @@ const Layout = ({ children }) => {
                         </div>
                     </div>
                     <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs uppercase tracking-widest text-cream-200/40">
-                        <p>© 2024 Terramarya. Todos los derechos reservados.</p>
+                        <p>© 2024 Terramarya. Todos los derechos reservados. <span className="text-gold-500/50 ml-2">v1.1 (Tablet Fix)</span></p>
                         <Link to="/admin" className="hover:text-gold-500 transition-colors">Admin Access</Link>
                     </div>
                 </div>
