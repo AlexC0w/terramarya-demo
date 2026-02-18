@@ -45,7 +45,7 @@ const Home = () => {
                         <div className="flex flex-col md:flex-row gap-6 justify-center">
                             <Link to="/reservar">
                                 <Button size="lg" variant="primary" className="w-full md:w-auto min-w-[200px] h-14 shadow-xl hover:shadow-gold-500/20 text-xl tracking-[0.2em] uppercase font-bold border-2 border-transparent bg-gold-500 text-wood-900 hover:bg-gold-400">
-                                    Reservar Mesa
+                                    Reservar
                                 </Button>
                             </Link>
                             <Link to="/puntos">
@@ -113,7 +113,7 @@ const Home = () => {
                                         <CardFooter className="flex flex-col gap-4 pt-6 shrink-0 mt-auto">
                                             <Link to={`/reservar?restaurantId=${restaurant.id}`} className="w-full">
                                                 <Button variant="primary" className="w-full py-6 text-sm tracking-[0.2em] uppercase shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform font-bold bg-gold-500 hover:bg-gold-600 text-wood-950 border-none">
-                                                    Reservar Mesa
+                                                    Reservar
                                                 </Button>
                                             </Link>
                                             <Link to={`/restaurante/${restaurant.id}`} className="w-full">

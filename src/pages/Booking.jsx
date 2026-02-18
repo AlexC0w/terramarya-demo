@@ -221,7 +221,7 @@ const Booking = () => {
                                     >
                                         <div className="flex flex-col md:flex-row h-auto md:h-64">
                                             {/* Image Section - Stacked on mobile, Side on desktop */}
-                                            <div className="relative w-full md:w-1/3 h-48 md:h-auto shrink-0 overflow-hidden">
+                                            <div className="relative w-full md:w-2/5 h-48 md:h-auto shrink-0 overflow-hidden">
                                                 <img
                                                     src={restaurant.image}
                                                     alt={restaurant.name}
