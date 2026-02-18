@@ -71,13 +71,13 @@ const Home = () => {
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8">
                         {restaurants.map((restaurant) => {
                             const tagColor = getTagColor(restaurant.type);
 
                             return (
-                                <Card key={restaurant.id} className="group hover:-translate-y-2 transition-transform duration-500 border-white/5 bg-wood-800/50 overflow-hidden flex flex-col h-full shadow-lg shadow-black/40">
-                                    <Link to={`/restaurante/${restaurant.id}`} className="relative h-72 overflow-hidden shrink-0 block cursor-pointer">
+                                <Card key={restaurant.id} className="group hover:-translate-y-2 transition-transform duration-500 border-white/5 bg-wood-800/50 overflow-hidden flex flex-col md:flex-row lg:flex-col h-full shadow-lg shadow-black/40">
+                                    <Link to={`/restaurante/${restaurant.id}`} className="relative h-72 md:h-auto md:w-2/5 lg:w-full lg:h-72 overflow-hidden shrink-0 block cursor-pointer">
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
                                         <img
                                             src={restaurant.image}
@@ -95,32 +95,34 @@ const Home = () => {
                                         </div>
                                     </Link>
 
-                                    <CardHeader>
-                                        <Link to={`/restaurante/${restaurant.id}`}>
-                                            <CardTitle className="group-hover:text-gold-400 transition-colors text-3xl font-serif">
-                                                {restaurant.name}
-                                            </CardTitle>
-                                        </Link>
-                                    </CardHeader>
+                                    <div className="flex flex-col grow md:w-3/5 lg:w-full">
+                                        <CardHeader>
+                                            <Link to={`/restaurante/${restaurant.id}`}>
+                                                <CardTitle className="group-hover:text-gold-400 transition-colors text-3xl font-serif">
+                                                    {restaurant.name}
+                                                </CardTitle>
+                                            </Link>
+                                        </CardHeader>
 
-                                    <CardContent className="grow">
-                                        <CardDescription className="text-base leading-relaxed line-clamp-3 text-cream-200/70">
-                                            {restaurant.description}
-                                        </CardDescription>
-                                    </CardContent>
+                                        <CardContent className="grow">
+                                            <CardDescription className="text-base leading-relaxed line-clamp-3 md:line-clamp-none lg:line-clamp-3 text-cream-200/70">
+                                                {restaurant.description}
+                                            </CardDescription>
+                                        </CardContent>
 
-                                    <CardFooter className="flex flex-col gap-4 pt-6 shrink-0 mt-auto">
-                                        <Link to={`/reservar?restaurantId=${restaurant.id}`} className="w-full">
-                                            <Button variant="primary" className="w-full py-6 text-sm tracking-[0.2em] uppercase shadow-lg shadow-black/20 hover:shadow-gold-500/10 hover:scale-[1.02] transition-transform font-bold bg-gold-600 hover:bg-gold-500 text-wood-950">
-                                                Reservar Mesa
-                                            </Button>
-                                        </Link>
-                                        <Link to={`/restaurante/${restaurant.id}`} className="w-full">
-                                            <Button variant="outline" className="w-full py-4 text-xs border border-cream-200/20 hover:bg-cream-200/10 tracking-[0.2em] uppercase text-cream-100 hover:text-gold-400 transition-all hover:border-gold-500/50">
-                                                Ver Detalles
-                                            </Button>
-                                        </Link>
-                                    </CardFooter>
+                                        <CardFooter className="flex flex-col gap-4 pt-6 shrink-0 mt-auto">
+                                            <Link to={`/reservar?restaurantId=${restaurant.id}`} className="w-full">
+                                                <Button variant="primary" className="w-full py-6 text-sm tracking-[0.2em] uppercase shadow-lg shadow-black/20 hover:shadow-gold-500/10 hover:scale-[1.02] transition-transform font-bold bg-gold-600 hover:bg-gold-500 text-wood-950">
+                                                    Reservar Mesa
+                                                </Button>
+                                            </Link>
+                                            <Link to={`/restaurante/${restaurant.id}`} className="w-full">
+                                                <Button variant="outline" className="w-full py-4 text-xs border border-cream-200/20 hover:bg-cream-200/10 tracking-[0.2em] uppercase text-cream-100 hover:text-gold-400 transition-all hover:border-gold-500/50">
+                                                    Ver Detalles
+                                                </Button>
+                                            </Link>
+                                        </CardFooter>
+                                    </div>
                                 </Card>
                             );
                         })}

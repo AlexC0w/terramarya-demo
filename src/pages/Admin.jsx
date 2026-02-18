@@ -189,20 +189,22 @@ const Admin = () => {
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <div className="h-48 flex items-end gap-2 md:gap-4 pt-4">
-                                    {stats.byHour.map((data, i) => (
-                                        <div key={i} className="flex-1 flex flex-col items-center gap-2 group h-full justify-end">
-                                            <div
-                                                className="w-full bg-gold-500/40 rounded-t-sm relative transition-all duration-500 group-hover:bg-gold-500"
-                                                style={{ height: `${(data.count / maxCount) * 100}%`, minHeight: '4px' }}
-                                            >
-                                                <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-wood-900 text-gold-500 text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-gold-500/20 z-10">
-                                                    {data.count} reservas
+                                <div className="h-48 flex items-end gap-2 md:gap-4 pt-4 overflow-x-auto pb-2">
+                                    <div className="flex items-end gap-2 md:gap-4 min-w-[500px] w-full h-full">
+                                        {stats.byHour.map((data, i) => (
+                                            <div key={i} className="flex-1 flex flex-col items-center gap-2 group h-full justify-end min-w-[20px]">
+                                                <div
+                                                    className="w-full bg-gold-500/40 rounded-t-sm relative transition-all duration-500 group-hover:bg-gold-500"
+                                                    style={{ height: `${(data.count / maxCount) * 100}%`, minHeight: '4px' }}
+                                                >
+                                                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-wood-900 text-gold-500 text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-gold-500/20 z-10">
+                                                        {data.count} reservas
+                                                    </div>
                                                 </div>
+                                                <span className="text-[10px] text-cream-200/60 font-mono -rotate-45 origin-center translate-y-2">{data.hour}</span>
                                             </div>
-                                            <span className="text-[10px] text-cream-200/60 font-mono -rotate-45 origin-center translate-y-2">{data.hour}</span>
-                                        </div>
-                                    ))}
+                                        ))}
+                                    </div>
                                 </div>
                             </CardContent>
                         </Card>

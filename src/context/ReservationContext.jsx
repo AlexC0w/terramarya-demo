@@ -48,7 +48,7 @@ const RESTAURANTS = [
         id: 3,
         name: "Café de Villa (Restaurant)",
         type: "Restaurante Familiar",
-        image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974",
+        image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974", // Rustic interior
         description: "Cocina reconfortante en un ambiente relajado, ideal para desayunos y comidas familiares inolvidables.",
         gallery: [
             "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047",

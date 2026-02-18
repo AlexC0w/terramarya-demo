@@ -219,9 +219,9 @@ const Booking = () => {
                                         onClick={() => handleRestaurantSelect(restaurant.id)}
                                         className="group relative bg-wood-800/40 border border-white/5 rounded-sm overflow-hidden hover:bg-wood-800/60 transition-all cursor-pointer shadow-lg hover:shadow-gold-500/5 hover:-translate-y-1"
                                     >
-                                        <div className="flex h-56 md:h-64">
-                                            {/* Image Section - Compact: Left side */}
-                                            <div className="relative w-1/3 md:w-1/3 shrink-0 overflow-hidden">
+                                        <div className="flex flex-col md:flex-row h-auto md:h-64">
+                                            {/* Image Section - Stacked on mobile, Side on desktop */}
+                                            <div className="relative w-full md:w-1/3 h-48 md:h-auto shrink-0 overflow-hidden">
                                                 <img
                                                     src={restaurant.image}
                                                     alt={restaurant.name}
@@ -232,9 +232,16 @@ const Booking = () => {
                                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                                 />
                                                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
-                                                <div className="absolute top-2 left-2">
-                                                    <span className={`text-white text-[9px] px-2 py-0.5 rounded-full uppercase tracking-wider font-bold shadow-sm ${getTagColor(restaurant.type)}`}>
+                                                <div className="absolute top-2 left-2 flex flex-col gap-2">
+                                                    <span className={`text-white text-[9px] px-2 py-0.5 rounded-full uppercase tracking-wider font-bold shadow-sm w-fit ${getTagColor(restaurant.type)}`}>
                                                         {restaurant.type}
+                                                    </span>
+                                                </div>
+                                                {/* Availability Badge */}
+                                                <div className="absolute bottom-2 right-2 md:top-2 md:right-2 md:bottom-auto">
+                                                    <span className="bg-emerald-500/90 backdrop-blur-sm text-wood-900 text-[10px] px-2 py-1 rounded-full uppercase tracking-wider font-bold shadow-sm flex items-center gap-1">
+                                                        <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                                                        Lugares Disponibles
                                                     </span>
                                                 </div>
                                             </div>

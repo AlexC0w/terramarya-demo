@@ -39,7 +39,7 @@ const Layout = ({ children }) => {
                     </Link>
 
                     {/* Desktop Nav */}
-                    <div className="hidden md:flex items-center gap-8">
+                    <div className="hidden lg:flex items-center gap-8">
                         {items.map((item) => (
                             <Link
                                 key={item.path}
@@ -63,7 +63,7 @@ const Layout = ({ children }) => {
 
                     {/* Mobile Menu Toggle */}
                     <button
-                        className="md:hidden text-cream-100 hover:text-gold-400 p-2"
+                        className="lg:hidden text-cream-100 hover:text-gold-400 p-2"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                         {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -72,7 +72,7 @@ const Layout = ({ children }) => {
 
                 {/* Mobile Nav - Full Screen Overlay */}
                 {isMenuOpen && (
-                    <div className="md:hidden fixed top-20 left-0 right-0 bottom-0 bg-wood-900/98 backdrop-blur-xl border-t border-white/5 p-6 flex flex-col gap-6 animate-in slide-in-from-top-5 z-50 overflow-y-auto">
+                    <div className="lg:hidden fixed top-20 left-0 right-0 bottom-0 bg-wood-900/98 backdrop-blur-xl border-t border-white/5 p-6 flex flex-col gap-6 animate-in slide-in-from-top-5 z-50 overflow-y-auto">
                         {items.map((item) => (
                             <Link
                                 key={item.path}
