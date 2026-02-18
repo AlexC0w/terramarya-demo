@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/terramarya-demo/sw.js', { scope: '/terramarya-demo/' })})}
