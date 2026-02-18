@@ -48,7 +48,7 @@ const RESTAURANTS = [
         id: 3,
         name: "Café de Villa (Restaurant)",
         type: "Restaurante Familiar",
-        image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974", // Rustic interior
+        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070", // Definitive rustic restaurant interior
         description: "Cocina reconfortante en un ambiente relajado, ideal para desayunos y comidas familiares inolvidables.",
         gallery: [
             "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047",
@@ -76,7 +76,8 @@ export const ReservationProvider = ({ children }) => {
 
     // Load from local storage on mount (simulation of persistence)
     useEffect(() => {
-        const savedReservations = localStorage.getItem('reservations');
+        // Version 3: Forced update to refresh restaurant images
+        const savedReservations = localStorage.getItem('reservations_v3');
         let parsedData = [];
         if (savedReservations) {
             try {
@@ -139,7 +140,7 @@ export const ReservationProvider = ({ children }) => {
 
     // Save to local storage on change
     useEffect(() => {
-        localStorage.setItem('reservations', JSON.stringify(reservations));
+        localStorage.setItem('reservations_v3', JSON.stringify(reservations));
     }, [reservations]);
 
     useEffect(() => {

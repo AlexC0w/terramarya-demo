@@ -237,13 +237,7 @@ const Booking = () => {
                                                         {restaurant.type}
                                                     </span>
                                                 </div>
-                                                {/* Availability Badge */}
-                                                <div className="absolute bottom-2 right-2 md:top-2 md:right-2 md:bottom-auto">
-                                                    <span className="bg-emerald-500/90 backdrop-blur-sm text-wood-900 text-[10px] px-2 py-1 rounded-full uppercase tracking-wider font-bold shadow-sm flex items-center gap-1">
-                                                        <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                                                        Lugares Disponibles
-                                                    </span>
-                                                </div>
+
                                             </div>
 
                                             {/* Content Section */}
@@ -264,6 +258,14 @@ const Booking = () => {
                                                                 </li>
                                                             ))}
                                                         </ul>
+                                                    </div>
+
+                                                    {/* Availability Badge - Moved here */}
+                                                    <div className="mt-4 flex justify-end">
+                                                        <span className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] px-2 py-1 rounded-full uppercase tracking-wider font-bold shadow-sm flex items-center gap-1.5 w-fit">
+                                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                                                            Lugares Disponibles
+                                                        </span>
                                                     </div>
                                                 </div>
                                             </div>
