@@ -19,12 +19,12 @@ export default defineConfig({
         orientation: 'portrait',
         icons: [
           {
-            src: 'logo-simple.png',
-            sizes: '192x192', // Assuming high res, reusing for simple setup
+            src: 'pwa-icon.png',
+            sizes: '192x192', // Resized by browser/device
             type: 'image/png'
           },
           {
-            src: 'logo-simple.png',
+            src: 'pwa-icon.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable'
