@@ -33,7 +33,7 @@ const Home = () => {
                         <img
                             src={`${import.meta.env.BASE_URL}logo-white.png`}
                             alt="Terramarya Anchor"
-                            className="h-72 md:h-96 w-auto drop-shadow-2xl opacity-100 filter drop-shadow-[0_0_30px_rgba(255,255,255,0.15)]"
+                            className="h-72 md:h-96 w-auto object-contain drop-shadow-2xl opacity-100 filter drop-shadow-[0_0_30px_rgba(255,255,255,0.15)]"
                         />
                     </div>
 
@@ -76,9 +76,9 @@ const Home = () => {
                             const tagColor = getTagColor(restaurant.type);
 
                             return (
-                                <Card key={restaurant.id} className="group hover:-translate-y-2 transition-transform duration-500 border-white/5 bg-wood-800/50 overflow-hidden flex flex-col md:flex-row lg:flex-col h-full shadow-lg shadow-black/40">
+                                <Card key={restaurant.id} className="group hover:-translate-y-2 transition-transform duration-500 border-none bg-cream-100 overflow-hidden flex flex-col md:flex-row lg:flex-col h-full shadow-xl shadow-black/20">
                                     <Link to={`/restaurante/${restaurant.id}`} className="relative h-72 md:h-auto md:w-2/5 lg:w-full lg:h-72 overflow-hidden shrink-0 block cursor-pointer">
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
                                         <img
                                             src={restaurant.image}
                                             alt={restaurant.name}
@@ -98,26 +98,26 @@ const Home = () => {
                                     <div className="flex flex-col grow md:w-3/5 lg:w-full">
                                         <CardHeader>
                                             <Link to={`/restaurante/${restaurant.id}`}>
-                                                <CardTitle className="group-hover:text-gold-400 transition-colors text-3xl font-serif">
+                                                <CardTitle className="group-hover:text-gold-600 transition-colors text-3xl font-serif text-wood-900">
                                                     {restaurant.name}
                                                 </CardTitle>
                                             </Link>
                                         </CardHeader>
 
                                         <CardContent className="grow">
-                                            <CardDescription className="text-base leading-relaxed line-clamp-3 md:line-clamp-none lg:line-clamp-3 text-cream-200/70">
+                                            <CardDescription className="text-base leading-relaxed line-clamp-3 md:line-clamp-none lg:line-clamp-3 text-wood-600 font-medium">
                                                 {restaurant.description}
                                             </CardDescription>
                                         </CardContent>
 
                                         <CardFooter className="flex flex-col gap-4 pt-6 shrink-0 mt-auto">
                                             <Link to={`/reservar?restaurantId=${restaurant.id}`} className="w-full">
-                                                <Button variant="primary" className="w-full py-6 text-sm tracking-[0.2em] uppercase shadow-lg shadow-black/20 hover:shadow-gold-500/10 hover:scale-[1.02] transition-transform font-bold bg-gold-600 hover:bg-gold-500 text-wood-950">
+                                                <Button variant="primary" className="w-full py-6 text-sm tracking-[0.2em] uppercase shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform font-bold bg-gold-500 hover:bg-gold-600 text-wood-950 border-none">
                                                     Reservar Mesa
                                                 </Button>
                                             </Link>
                                             <Link to={`/restaurante/${restaurant.id}`} className="w-full">
-                                                <Button variant="outline" className="w-full py-4 text-xs border border-cream-200/20 hover:bg-cream-200/10 tracking-[0.2em] uppercase text-cream-100 hover:text-gold-400 transition-all hover:border-gold-500/50">
+                                                <Button variant="outline" className="w-full py-4 text-xs border border-wood-200 hover:border-wood-900 text-wood-800 hover:bg-wood-900 hover:text-gold-400 tracking-[0.2em] uppercase transition-all">
                                                     Ver Detalles
                                                 </Button>
                                             </Link>
