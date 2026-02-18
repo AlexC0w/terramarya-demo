@@ -11,7 +11,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://alejandro-baca.github.io/terramarya-demo",
+  "homepage": "https://AlexC0w.github.io/terramarya-demo",
   "dependencies": {
     "clsx": "^2.1.1",
     "lucide-react": "^0.574.0",

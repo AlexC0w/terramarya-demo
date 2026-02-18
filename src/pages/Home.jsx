@@ -31,7 +31,7 @@ const Home = () => {
                 <div className="relative container mx-auto px-4 text-center space-y-12 z-10 animate-in fade-in zoom-in duration-1000">
                     <div className="flex flex-col items-center justify-center gap-8">
                         <img
-                            src="/logo-white.png"
+                            src={`${import.meta.env.BASE_URL}logo-white.png`}
                             alt="Terramarya Anchor"
                             className="h-72 md:h-96 w-auto drop-shadow-2xl opacity-100 filter drop-shadow-[0_0_30px_rgba(255,255,255,0.15)]"
                         />

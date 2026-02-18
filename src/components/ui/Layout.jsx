@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
                 <div className="container mx-auto px-4 h-full flex items-center justify-between">
                     <Link to="/" className="flex items-center gap-3 group">
                         <img
-                            src="/logo-simple.png"
+                            src={`${import.meta.env.BASE_URL}logo-simple.png`}
                             alt="Terramarya Logo"
                             className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-110 drop-shadow-md"
                         />
@@ -104,7 +104,7 @@ const Layout = ({ children }) => {
                     <div className="grid md:grid-cols-3 gap-12 mb-12">
                         <div className="space-y-4">
                             <div className="flex items-center gap-3">
-                                <img src="/logo-white.png" alt="Logo" className="h-14 w-auto opacity-90" />
+                                <img src={`${import.meta.env.BASE_URL}logo-white.png`} alt="Logo" className="h-14 w-auto opacity-90" />
                                 <h3 className="font-serif text-3xl text-cream-100 tracking-wide">Terramarya</h3>
                             </div>
                             <p className="text-cream-200/60 leading-relaxed">
