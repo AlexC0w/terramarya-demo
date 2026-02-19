@@ -24,8 +24,8 @@ const Layout = ({ children }) => {
 
     return (
         <div className="min-h-screen w-full flex flex-col bg-wood-900 text-cream-100 font-sans selection:bg-gold-500 selection:text-wood-900 overflow-x-hidden relative">
-            {/* Navbar - Sticky to prevent offset issues */}
-            <nav className="sticky top-0 z-[100] w-full bg-wood-900/95 backdrop-blur-md border-b border-white/5 h-20 transition-all duration-300">
+            {/* Navbar - Fixed to guarantee visibility */}
+            <nav className="fixed top-0 left-0 right-0 z-[1000] w-full bg-wood-900/98 backdrop-blur-md border-b border-white/5 h-20 transition-all duration-300 shadow-xl">
                 <div className="container mx-auto px-4 h-full flex items-center justify-between">
                     <Link to="/" className="flex items-center gap-3 group">
                         <img
@@ -61,40 +61,40 @@ const Layout = ({ children }) => {
                         )}
                     </div>
 
-                    {/* Mobile Menu Toggle */}
+                    {/* Mobile Menu Toggle - Explicit High Z-Index */}
                     <button
-                        className="lg:hidden text-cream-100 hover:text-gold-400 p-2"
+                        className="lg:hidden text-cream-100 hover:text-gold-400 p-2 relative z-[1001]"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                         {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                     </button>
                 </div>
-
-                {/* Mobile Nav - Full Screen Overlay */}
-                {isMenuOpen && (
-                    <div className="lg:hidden fixed top-20 left-0 right-0 bottom-0 bg-wood-900/98 backdrop-blur-xl border-t border-white/5 p-6 flex flex-col gap-6 animate-in slide-in-from-top-5 z-50 overflow-y-auto">
-                        {items.map((item) => (
-                            <Link
-                                key={item.path}
-                                to={item.path}
-                                onClick={() => setIsMenuOpen(false)}
-                                className={cn(
-                                    "text-xl font-serif p-4 text-center border border-white/5 rounded-sm active:bg-white/5 transition-colors",
-                                    location.pathname === item.path ? "text-gold-400 bg-white/5 border-gold-400/30" : "text-cream-200"
-                                )}
-                            >
-                                {item.label}
-                            </Link>
-                        ))}
-                        <Link to="/reservar" onClick={() => setIsMenuOpen(false)}>
-                            <Button className="w-full mt-4 text-lg">Reservar Ahora</Button>
-                        </Link>
-                    </div>
-                )}
             </nav>
 
-            {/* Main Content */}
-            <main className="flex-grow">
+            {/* Mobile Nav - Fixed Overlay - Moved outside Nav to escape containing block */}
+            {isMenuOpen && (
+                <div className="lg:hidden fixed top-20 left-0 right-0 bottom-0 bg-wood-900/98 backdrop-blur-xl border-t border-white/5 p-6 flex flex-col gap-6 animate-in slide-in-from-top-5 z-[999] overflow-y-auto shadow-2xl">
+                    {items.map((item) => (
+                        <Link
+                            key={item.path}
+                            to={item.path}
+                            onClick={() => setIsMenuOpen(false)}
+                            className={cn(
+                                "text-xl font-serif p-4 text-center border border-white/5 rounded-sm active:bg-white/5 transition-colors",
+                                location.pathname === item.path ? "text-gold-400 bg-white/5 border-gold-400/30" : "text-cream-200"
+                            )}
+                        >
+                            {item.label}
+                        </Link>
+                    ))}
+                    <Link to="/reservar" onClick={() => setIsMenuOpen(false)}>
+                        <Button className="w-full mt-4 text-lg">Reservar Ahora</Button>
+                    </Link>
+                </div>
+            )}
+
+            {/* Main Content - Added padding-top to account for fixed navbar */}
+            <main className="flex-grow pt-20">
                 {children}
             </main>
 
@@ -126,7 +126,7 @@ const Layout = ({ children }) => {
                         </div>
                     </div>
                     <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs uppercase tracking-widest text-cream-200/40">
-                        <p>© 2024 Terramarya. Todos los derechos reservados. <span className="text-gold-500/50 ml-2">v1.1 (Tablet Fix)</span></p>
+                        <p>© 2024 Terramarya. Todos los derechos reservados. <span className="text-gold-500/50 ml-2">v1.3 (Layout Fix)</span></p>
                         <Link to="/admin" className="hover:text-gold-500 transition-colors">Admin Access</Link>
                     </div>
                 </div>
