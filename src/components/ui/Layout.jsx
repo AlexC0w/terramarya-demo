@@ -16,6 +16,8 @@ const Layout = ({ children }) => {
 
     const adminNavItems = [
         { label: 'Dashboard', path: '/admin' },
+        { label: 'Clientes', path: '/admin/clientes' },
+        { label: 'Registro Venta', path: '/admin/registro-venta' },
         { label: 'Configuración', path: '/admin/settings' },
     ];
 
@@ -127,7 +129,11 @@ const Layout = ({ children }) => {
                     </div>
                     <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs uppercase tracking-widest text-cream-200/40">
                         <p>© 2024 Terramarya. Todos los derechos reservados. <span className="text-gold-500/50 ml-2">v1.3 (Layout Fix)</span></p>
-                        <Link to="/admin" className="hover:text-gold-500 transition-colors">Admin Access</Link>
+                        <div className="flex gap-4">
+                            <Link to="/admin/clientes" className="hover:text-gold-500 transition-colors">Clientes CRM</Link>
+                            <Link to="/admin/registro-venta" className="hover:text-gold-500 transition-colors">Registro Venta</Link>
+                            <Link to="/admin" className="hover:text-gold-500 transition-colors">Admin Access</Link>
+                        </div>
                     </div>
                 </div>
             </footer>

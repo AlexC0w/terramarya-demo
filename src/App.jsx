@@ -4,7 +4,9 @@ import Home from './pages/Home';
 import Booking from './pages/Booking';
 import HappyPoints from './pages/HappyPoints';
 import Admin from './pages/Admin';
+import Customers from './pages/Customers';
 import RestaurantDetails from './pages/RestaurantDetails';
+import LoyaltyTerminal from './pages/LoyaltyTerminal';
 
 import { ReservationProvider } from './context/ReservationContext';
 
@@ -18,6 +20,8 @@ function App() {
           <Route path="/restaurante/:id" element={<RestaurantDetails />} />
           <Route path="/puntos" element={<HappyPoints />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/clientes" element={<Customers />} />
+          <Route path="/admin/registro-venta" element={<LoyaltyTerminal />} />
         </Routes>
       </BrowserRouter>
     </ReservationProvider>
